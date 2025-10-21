@@ -100,7 +100,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       confineToSafeArea: true,
       navBarHeight: kBottomNavigationBarHeight,
-      navBarStyle: NavBarStyle.style1,
+      navBarStyle: NavBarStyle.style12,
     );
   }
 }

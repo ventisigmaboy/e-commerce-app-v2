@@ -8,8 +8,12 @@ void main() {
   runApp(
     GetMaterialApp(
       title: "Application",
-      initialRoute: AppRoutes.splash,
+      initialRoute: AppRoutes.main,
       getPages: AppPages.routes,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+      ),
     ),
   );
 }
