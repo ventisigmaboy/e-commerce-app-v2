@@ -22,7 +22,7 @@ class SpecialOfferBanner extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: size.height * 0.1,
+        height: size.height * 0.12,
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.grey.shade200,
@@ -45,9 +45,7 @@ class SpecialOfferBanner extends StatelessWidget {
                     fit: BoxFit.cover,
                     height: size.height * 0.1,
                     errorBuilder: (context, error, stackTrace) {
-                      return Container(
-                        color: Colors.grey.shade300,
-                      );
+                      return Container(color: Colors.grey.shade300);
                     },
                   ),
                 ),
@@ -58,28 +56,34 @@ class SpecialOfferBanner extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    discount,
-                    style: const TextStyle(
-                      fontSize: 36,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  SizedBox(
-                    width: double.infinity,
+                  Flexible(
                     child: Text(
-                      description,
+                      discount,
                       style: TextStyle(
-                        fontSize: 11,
-                        color: Colors.grey.shade700,
+                        fontSize: size.width * 0.06,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Flexible(
+                    child: Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: size.width * 0.035,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Flexible(
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Text(
+                        description,
+                        style: TextStyle(
+                          fontSize: size.width * 0.025,
+                          color: Colors.grey.shade700,
+                        ),
                       ),
                     ),
                   ),
