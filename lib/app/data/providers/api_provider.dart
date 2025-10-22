@@ -1,7 +1,8 @@
-import 'package:dio/dio.dart';
+
 import 'package:get_storage/get_storage.dart';
 
 import '../../core/constants/api_constants.dart';
+import 'package:dio/dio.dart';
 
 class ApiProvider {
   late Dio _dio;

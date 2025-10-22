@@ -21,6 +21,7 @@ class _BannerSliderState extends State<BannerSlider> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Stack(
       children: [
         CarouselSlider(
@@ -34,7 +35,7 @@ class _BannerSliderState extends State<BannerSlider> {
             );
           }).toList(),
           options: CarouselOptions(
-            height: 200,
+            height: size.height * 0.15,
             viewportFraction: 1.0,
             autoPlay: true,
             autoPlayInterval: const Duration(seconds: 3),

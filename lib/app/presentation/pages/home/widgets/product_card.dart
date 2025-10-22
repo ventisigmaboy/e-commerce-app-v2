@@ -59,13 +59,13 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Colors.grey.shade200),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,12 +76,12 @@ class ProductCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                   child: Image.network(
                     product.imageUrl,
-                    height: 200,
+                    height: size.width * 0.4,
                     width: double.infinity,
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
-                        height: 200,
+                        height: size.width * 0.4,
                         color: Colors.grey.shade200,
                         child: const Icon(Icons.image, size: 50),
                       );
@@ -111,7 +111,7 @@ class ProductCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: size.width * 0.03),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -125,7 +125,7 @@ class ProductCard extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 5),
+                SizedBox(height: size.width * 0.01),
                 Row(
                   children: [
                     const Icon(Icons.star, color: Colors.black, size: 18),
@@ -161,7 +161,7 @@ class ProductCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: size.width * 0.01),
                 Text(
                   '\$${product.price}',
                   style: const TextStyle(
